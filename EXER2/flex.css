@@ -1,28 +1,123 @@
+/* Heavily inspired stylesheet color choices, aesthetics from Lev's codepen https://codepen.io/levise/pen/vMzEwr (Also I've just been a big fan of Nier to Nier Automata ever since.
+
+Personally I have been waiting for a chance to really try to make a portfolio webpage and I've been eyeing this particular pen from when I was a freshman
+*/
+
+/* YorHa colors from the in game Nier Automata screens */
+:root {
+    
+    --yorha-bg: #C8C2AA;
+
+    --yorha-text: #4D493E;
+
+    /* Need alpha to make it transparent to blend in the background */
+    --yorha-grid: rgba(78, 75, 66, 0.15);
+}
+
+body {
+    background-color: var(--yorha-bg);
+    color: var(--yorha-text);
+    margin: 0;
+    font-family:'Courier New', Courier, monospace;
+
+    background-image: 
+    /* this makes the vertical lines on the background */
+    linear-gradient(90deg, var(--yorha-grid) 1px, transparent 1px),
+    /* this makes the horizontal lines on the background */
+    linear-gradient(var(--yorha-grid) 1px, transparent 1px);
+
+    /* size of the squares on the background */
+    background-size: 4px 4px;
+}
+
 .flex-container {
     display: flex;
-    border-style: solid;
-    border-width: 5px;
-    border-color: red;
-    flex-direction: row;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    align-items: flex-start;
 }
 
+.flex-item {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid var(--yorha-text);
+    padding: 2rem;
+}
+
+h2, h3 {
+    /* incase I forget to uppercase it in the first place */
+    text-transform: uppercase; 
+    border-bottom: 2px solid var(--yorha-text);
+    display: inline-block;
+    margin-top: 0;
+}
+
+ul {
+    list-style: square;
+}
+
+.skill-list {
+    list-style: square;
+    line-height: 1.6;
+}
+
+.project-card {
+    border-left: 4px solid var(--yorha-text);
+    background: rgba(77,73, 62, 0.05);
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+/* Changes color of the card then gives the same effect you'd get in game when you hover over a button :D*/
+.project-card:hover {
+    background-color: var(--yorha-text);
+    color: var(--yorha-bg);
+    cursor: pointer;
+}
+
+.photo-frame {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Nier Automata styled photo effect*/
+.photo-frame img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+
+    border: 2px solid var(--yorha-text);
+    padding: 4px;
+    background: var(--yorha-text);
+    filter: sepia(100%) contrast(0.9);
+}
+/* This nav bar is only really here for cool points honestly
+    Will think more about it tomorrow */
 .nav_bar {
     display: flex;
-    border-style: solid;
-    border-width: 5px;
-    border-color: rgb(255, 0, 200);
-    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    background-color: var(--yorha-text);
+    padding: 15px 0;
+    
+    border-bottom: 4px double var(--yorha-bg);
+    margin-bottom: 30px;
 }
 
-.flex-container2 {
-    display: flex;
-    border-style: solid;
-    border-width: 5px;
-    border-color: rgb(0, 255, 51);
-    flex-direction: row;
+.nav-item {
+    color: var(--yorha-bg);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
-.flex-item {
-    border-style: solid;
-    border-width: 2px;
-    border-color: red;
+
+.nav-item:hover {
+    background-color: var(--yorha-bg);
+    color: var(--yorha-text);
+    padding: 0 10px;
 }
