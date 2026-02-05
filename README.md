@@ -1,5 +1,7 @@
 GALVIN M. GONZALES
+
 BS COMPUTER SCIENCE
+
 LIVE WEBSITE LINK: https://senjonanaya.github.io/CMSC100_EXER2/
 
 To create a Github page you need to first:
