@@ -20,6 +20,9 @@ body {
     margin: 0;
     font-family:'Courier New', Courier, monospace;
 
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+
     background-image: 
     /* this makes the vertical lines on the background */
     linear-gradient(90deg, var(--yorha-grid) 1px, transparent 1px),
@@ -27,7 +30,7 @@ body {
     linear-gradient(var(--yorha-grid) 1px, transparent 1px);
 
     /* size of the squares on the background */
-    background-size: 4px 4px;
+    background-size: 8px 8px;
 }
 
 .flex-container {
@@ -46,8 +49,56 @@ body {
     padding: 2rem;
 }
 
-h2, h3 {
+/* This nav bar is only really here for cool points honestly
+    Will think more about it tomorrow */
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: var(--yorha-text);
+    padding: 15px 0;
+    
+    border-bottom: 4px double var(--yorha-bg);
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    color: var(--yorha-bg);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+/* same idea from the project cards */
+.nav-item:hover {
+    background-color: var(--yorha-bg);
+    color: var(--yorha-text);
+    padding: 0 10px;
+}
+.photo-frame {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Nier Automata styled photo effect*/
+.photo-frame img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+
+    border: 2px solid var(--yorha-text);
+    padding: 4px;
+    background: var(--yorha-text);
+    filter: sepia(100%) contrast(0.9);
+}
+
+
+h2, h3, h4 {
     /* incase I forget to uppercase it in the first place */
+    letter-spacing: 0.2rem;
+    
     text-transform: uppercase; 
     border-bottom: 2px solid var(--yorha-text);
     display: inline-block;
@@ -78,37 +129,8 @@ ul {
     cursor: pointer;
 }
 
-.photo-frame {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Nier Automata styled photo effect*/
-.photo-frame img {
-    max-width: 180px;
-    width: 100%;
-    height: auto;
-
-    border: 2px solid var(--yorha-text);
-    padding: 4px;
-    background: var(--yorha-text);
-    filter: sepia(100%) contrast(0.9);
-}
-/* This nav bar is only really here for cool points honestly
-    Will think more about it tomorrow */
-.nav_bar {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    background-color: var(--yorha-text);
-    padding: 15px 0;
-    
-    border-bottom: 4px double var(--yorha-bg);
-    margin-bottom: 30px;
-}
-
-.nav-item {
-    color: var(--yorha-bg);
+.project-card-item {
+    color: var(---yorha-text);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
@@ -116,8 +138,31 @@ ul {
     transition: 0.3s;
 }
 
-.nav-item:hover {
-    background-color: var(--yorha-bg);
-    color: var(--yorha-text);
-    padding: 0 10px;
+.footer-bar {
+    background-color: var(--yorha-text);
+    color: var(--yorha-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 4px double var(--yorha-bg);
+}
+
+.footer-bar a {
+    color: var(--yorha-bg);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* decided to watch a tutorial on media queries after seeing sir's lecture earlier, this should do good enough?*/
+@media (max-width: 768px) {
+    .flex-container {
+        /* column wise as there may not be enough space (ALSO GIVES THE NAVBAR A PURPOSE)*/
+        flex-direction: column; 
+        padding: 10px;
+    }
+    
+    .nav_bar {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
 }
